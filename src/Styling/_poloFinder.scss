@@ -3,22 +3,31 @@
     width: 100%;
     display: flex;
     background: #225CE9;
-}
 
-.PF_Box {
-    height: 90%;
-    width: 80%;
-    margin: auto;
-    background: #F4F6F6;
-    display: flex;
-    overflow: hidden;
-}
+    .PF_Box {
+        height: 90%;
+        width: 80%;
+        margin: auto;
+        background: #F4F6F6;
+        display: flex;
+        overflow: hidden;
 
-.PF_Content {
-    margin: auto;
-    height: 85%;
-    width: 93%;
-    border-radius: 10px;
-    background: #FFFFFF;
-    box-shadow: 0 50px 60px rgba(0,0,0,0.10);
+        .PF_Content {
+            margin: auto;
+            height: 85%;
+            width: 93%;
+            border-radius: 10px;
+            background: #FFFFFF;
+            box-shadow: 0 50px 60px rgba(0,0,0,0.10);
+
+            .PF_Input {
+                display: flex;
+                flex-direction: column;
+                label{
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
 }

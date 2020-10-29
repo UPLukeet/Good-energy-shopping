@@ -6,11 +6,14 @@ function PoloFinder() {
     <div className="PF_Container">
       <div className="PF_Box">
         <div className="PF_Content">
-          <div className="PF_Input">
-            </div>
-          </div>
+          <div className="PF_Input"></div>
+          <label>test</label>
+          <label>test Two</label>
+          <label>test Three</label>
+          <p>shbshb</p>
         </div>
       </div>
+    </div>
   );
 }
 
