@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Data from "./polo-variants.json";
 import Select from "react-select";
-import DriveEtaIcon from '@material-ui/icons/DriveEta';
-import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
+import DriveEtaIcon from "@material-ui/icons/DriveEta";
+import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 
 function PoloFinder() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -77,10 +77,16 @@ function PoloFinder() {
               placeholder={"Test2"}
             />
           </div>
-          <div className= "PF_Info">
+          
+          <div className="PF_Info">
             <DriveEtaIcon />
-            <EmojiEmotionsIcon />
+            <p>Test Text</p>
           </div>
+          <div className="PF_Info">
+            <EmojiEmotionsIcon />
+            <p>Test Text</p>
+          </div>
+
           <div className="PF_Buttons">
             <p>AVI + Fact</p>
             <p>Start Again</p>

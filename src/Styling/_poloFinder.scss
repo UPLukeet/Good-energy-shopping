@@ -73,8 +73,7 @@
 
             .PF_Info {
                 display: flex;
-                flex-direction: column;
-                margin-top: auto;
+                flex-shrink: 1;
 
                 svg {
                     height: 20px;
@@ -82,7 +81,7 @@
                     border-radius: 50%;
                     background-color: rgba(81, 193, 132, 0.5);
                     color: #51C184;
-                    margin-top: 2%;
+                    margin-top: 5%;
                     margin-left: 5%;
                 }
 
@@ -91,7 +90,7 @@
             .PF_Buttons {
                 display: flex;
                 flex-direction: column;
-                margin-top: auto;
+                margin-bottom: auto;
 
                 p {
                     cursor: pointer;
