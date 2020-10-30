@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Data from "./polo-variants.json";
 import Select from "react-select";
+import DriveEtaIcon from '@material-ui/icons/DriveEta';
+import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 
 function PoloFinder() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -33,8 +35,8 @@ function PoloFinder() {
   return (
     <div className="PF_Container">
       <div className="PF_Box">
+        <h2>Polo ABI checker</h2>
         <div className="PF_Content">
-          <h2>Polo ABI checker</h2>
           <div className="PF_Input">
             <Select
               className={"poloOption_container"}
@@ -75,9 +77,13 @@ function PoloFinder() {
               placeholder={"Test2"}
             />
           </div>
+          <div className= "PF_Info">
+            <DriveEtaIcon />
+            <EmojiEmotionsIcon />
+          </div>
           <div className="PF_Buttons">
+            <p>AVI + Fact</p>
             <p>Start Again</p>
-            <p>Fact</p>
           </div>
         </div>
       </div>

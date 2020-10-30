@@ -9,7 +9,21 @@
         margin: auto;
         background: #FFFFFF;
         display: flex;
+        flex-direction: column;
         overflow: hidden;
+
+
+        h2 {
+            text-align: center;
+            padding: 0;
+            width: 100%;
+            background-color: rgba(81, 193, 132, 0.8);
+            color: white;
+            margin-top: 0;
+            padding-top: 1.5%;
+            padding-bottom: 1%;
+
+        }
 
         .PF_Content {
             display: flex;
@@ -21,22 +35,17 @@
             background: #FFFFFF;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.10), 0 5px 6px rgba(0, 0, 0, 0.05);
 
-            h2{
-                text-align: center;
-            }
-
             .PF_Input {
                 display: flex;
                 flex-direction: column;
-                height: 100%;
 
                 .poloOption_container {
                     width: 90%;
                     margin: auto;
-                    
+
 
                     .poloOptions__control {
-                        box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+                        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
                         cursor: pointer;
 
                         .poloOptions__indicators {
@@ -56,34 +65,52 @@
 
                     .poloOptions__option:hover {
                         color: white;
-                        background-color: rgba(81, 193, 132, 0.6);
+                        background-color: rgba(81, 193, 132, 0.5);
                         cursor: pointer;
                     }
                 }
             }
 
-            .PF_Buttons{
+            .PF_Info {
                 display: flex;
                 flex-direction: column;
+                margin-top: auto;
 
-                p{
+                svg {
+                    height: 20px;
+                    padding: 6px;
+                    border-radius: 50%;
+                    background-color: rgba(81, 193, 132, 0.5);
+                    color: #51C184;
+                    margin-top: 2%;
+                    margin-left: 5%;
+                }
+
+            }
+
+            .PF_Buttons {
+                display: flex;
+                flex-direction: column;
+                margin-top: auto;
+
+                p {
                     cursor: pointer;
                     text-align: center;
-                    padding: 10px;
+                    padding: 4%;
                     border-radius: 3px;
                     background: #51C184;
                     color: white;
                     width: 60%;
                     margin-left: auto;
                     margin-right: auto;
-                    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-                    transition: 0.1s ease-in;
+                    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+                    transition: 0.15s ease-in;
                 }
 
-                p:active{
-                    transition: 0.1s ease-in;
+                p:active {
+                    transition: 0.15s ease-in;
                     background: white;
-                    color:  #51C184;
+                    color: #51C184;
                 }
             }
 
@@ -92,57 +119,76 @@
 }
 
 @media only screen and (min-width: 640px) {
-
-}
-
-@media only screen and (min-width: 1025px) {
     .PF_Container {
 
-    
+
         .PF_Box {
             height: 90%;
             width: 80%;
 
             .PF_Content {
 
-    
+
                 .PF_Input {
                     flex-direction: row;
-    
 
-                .break {
-                    flex-basis: 100%;
-                    height: 0;
-                  }
+
 
                     .poloOption_container {
                         width: 45%;
                         margin-top: 5%;
+                        margin-bottom: 0;
 
                     }
                 }
 
-                .PF_Buttons{
+                .PF_Buttons {
                     display: flex;
                     flex-direction: row;
-                    
-                    p{
-                        padding: 20px;
-                        border-radius: 3px;
-                        background: #51C184;
-                        color: white;
-                        width: 20%;
-                        margin-left: auto;
-                        margin-right: auto;
-                        transition: 0.3s ease-in;
+                    width: 60%;
+                    margin: auto;
+
+                    p {
+                        width: 30%;
+
                     }
-                    p:hover{
-                        transition: 0.3s ease-in;
-                        background: white;
-                        color:  #51C184;
+
+                }
+
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .PF_Container {
+
+
+        .PF_Box {
+
+            .PF_Content {
+
+
+                .PF_Input {
+
+                    .poloOption_container {
+
                     }
                 }
-    
+
+                .PF_Buttons {
+
+                    p {
+                        transition: 0.3s ease-in;
+                    }
+
+                    p:hover {
+                        transition: 0.3s ease-in;
+                        background: white;
+                        color: #51C184;
+                    }
+                }
+
             }
         }
     }
