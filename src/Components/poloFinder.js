@@ -24,35 +24,61 @@ function PoloFinder() {
   const colourStyles = {
     option: (provided, state) => ({
       ...provided,
-      color: state.isSelected ? 'white' : 'black',
-      background: state.isSelected ? '#51C184' : 'white',
+      color: state.isSelected ? "white" : "black",
+      background: state.isSelected ? "#51C184" : "white",
       padding: 20,
     }),
-  }
+  };
 
   return (
     <div className="PF_Container">
       <div className="PF_Box">
         <div className="PF_Content">
-          <div className="PF_Input"></div>
-          <Select
-            className={"poloOption_container"}
-            classNamePrefix={"poloOptions"}
-            defaultValue={series}
-            onChange={setSeries}
-            options={seriesOptions}
-            styles={colourStyles}
-            placeholder={"Polo seies"}
-          />
-          <Select
-            className={"poloOption_container"}
-            classNamePrefix={"poloOptions"}
-            defaultValue={selectedOption}
-            onChange={setSelectedOption}
-            options={options}
-            styles={colourStyles}
-            placeholder={"Test2"}
-          />
+          <h2>Polo ABI checker</h2>
+          <div className="PF_Input">
+            <Select
+              className={"poloOption_container"}
+              classNamePrefix={"poloOptions"}
+              defaultValue={series}
+              onChange={setSeries}
+              options={seriesOptions}
+              styles={colourStyles}
+              placeholder={"Polo seies"}
+            />
+            <Select
+              className={"poloOption_container"}
+              classNamePrefix={"poloOptions"}
+              defaultValue={selectedOption}
+              onChange={setSelectedOption}
+              options={options}
+              styles={colourStyles}
+              placeholder={"Test2"}
+            />
+          </div>
+          <div className="PF_Input">
+            <Select
+              className={"poloOption_container"}
+              classNamePrefix={"poloOptions"}
+              defaultValue={selectedOption}
+              onChange={setSelectedOption}
+              options={options}
+              styles={colourStyles}
+              placeholder={"Test2"}
+            />
+            <Select
+              className={"poloOption_container"}
+              classNamePrefix={"poloOptions"}
+              defaultValue={selectedOption}
+              onChange={setSelectedOption}
+              options={options}
+              styles={colourStyles}
+              placeholder={"Test2"}
+            />
+          </div>
+          <div className="PF_Buttons">
+            <p>Start Again</p>
+            <p>Fact</p>
+          </div>
         </div>
       </div>
     </div>
