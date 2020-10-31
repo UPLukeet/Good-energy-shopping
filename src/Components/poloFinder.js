@@ -8,7 +8,9 @@ function PoloFinder() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [series, setSeries] = useState(null);
 
-  const [ABI, setABI] = useState("The ABI code For your Car will be printed here.");
+  const [ABI, setABI] = useState(
+    "The ABI code For your Car will be printed here."
+  );
   const [fact, setFact] = useState("A fact will be displayed here.");
 
   const options = [
@@ -37,7 +39,7 @@ function PoloFinder() {
 
   const ABI_Handler = () => {
     setABI(Data[1].model.abiCode);
-    setFact("Fun fact!")
+    setFact("Fun fact!");
     console.log(Data[1].model);
   };
 
@@ -92,17 +94,19 @@ function PoloFinder() {
             />
           </div>
 
-          <div className="PF_Info ABI">
-            <DriveEtaIcon />
-            <p>{ABI}</p>
-          </div>
-          <div className="PF_Info Fact">
-            <EmojiEmotionsIcon />
-            <p>{fact}</p>
+          <div className="PF_Info_Container">
+            <div className="PF_Info ABI">
+              <DriveEtaIcon />
+              <p>{ABI}</p>
+            </div>
+            <div className="PF_Info Fact">
+              <EmojiEmotionsIcon />
+              <p>{fact}</p>
+            </div>
           </div>
 
           <div className="PF_Buttons">
-            <p onClick={ABI_Handler}>AVI + Fact</p>
+            <p onClick={ABI_Handler} className="PF_Button_Fact">AVI + Fact</p>
             <p onClick={Reset_Data}>Start Again</p>
           </div>
         </div>
