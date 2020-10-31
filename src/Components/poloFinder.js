@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Data from "./polo-variants.json";
+import Data from "./polo-variants";
 import Select from "react-select";
 import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
@@ -7,6 +7,9 @@ import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 function PoloFinder() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [series, setSeries] = useState(null);
+
+  const [ABI, setABI] = useState("The ABI code For your Car will be printed here.");
+  const [fact, setFact] = useState("A fact will be displayed here.");
 
   const options = [
     { value: "chocolate", label: "Chocolate" },
@@ -32,10 +35,21 @@ function PoloFinder() {
     }),
   };
 
+  const ABI_Handler = () => {
+    setABI(Data[1].model.abiCode);
+    setFact("Fun fact!")
+    console.log(Data[1].model);
+  };
+
+  const Reset_Data = () => {
+    setFact("A fact will be displayed here.");
+    setABI("The ABI code For your Car will be printed here.");
+  };
+
   return (
     <div className="PF_Container">
       <div className="PF_Box">
-        <h2>Polo ABI checker</h2>
+        <h2>Polo ABI Checker</h2>
         <div className="PF_Content">
           <div className="PF_Input">
             <Select
@@ -77,19 +91,19 @@ function PoloFinder() {
               placeholder={"Test2"}
             />
           </div>
-          
-          <div className="PF_Info">
+
+          <div className="PF_Info ABI">
             <DriveEtaIcon />
-            <p>Test Text</p>
+            <p>{ABI}</p>
           </div>
-          <div className="PF_Info">
+          <div className="PF_Info Fact">
             <EmojiEmotionsIcon />
-            <p>Test Text</p>
+            <p>{fact}</p>
           </div>
 
           <div className="PF_Buttons">
-            <p>AVI + Fact</p>
-            <p>Start Again</p>
+            <p onClick={ABI_Handler}>AVI + Fact</p>
+            <p onClick={Reset_Data}>Start Again</p>
           </div>
         </div>
       </div>
