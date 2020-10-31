@@ -5,13 +5,10 @@ import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 
 function PoloFinder() {
+
+  //drop down selections
   const [selectedOption, setSelectedOption] = useState(null);
   const [series, setSeries] = useState(null);
-
-  const [ABI, setABI] = useState(
-    "The ABI code For your Car will be printed here."
-  );
-  const [fact, setFact] = useState("A fact will be displayed here.");
 
   const options = [
     { value: "chocolate", label: "Chocolate" },
@@ -28,6 +25,14 @@ function PoloFinder() {
     { value: "6", label: "6" },
   ];
 
+
+  //prints for information
+  const [ABI, setABI] = useState(
+    "The ABI code For your Car will be printed here."
+  );
+  const [fact, setFact] = useState("A fact will be displayed here.");
+
+ // active styling for dropdown
   const colourStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -37,12 +42,14 @@ function PoloFinder() {
     }),
   };
 
+  //sets info text using Json
   const ABI_Handler = () => {
     setABI(Data[1].model.abiCode);
     setFact("Fun fact!");
     console.log(Data[1].model);
   };
 
+  //resets info text
   const Reset_Data = () => {
     setFact("A fact will be displayed here.");
     setABI("The ABI code For your Car will be printed here.");
