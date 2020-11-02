@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import PoloFinder from "./Components/poloFinder";
+import PoloFinder from "./Components/homepage/polofinder";
 
 function App() {
   return (

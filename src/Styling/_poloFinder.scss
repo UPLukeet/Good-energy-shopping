@@ -6,14 +6,14 @@
 
     //container for heading and styling
     .PF_Box {
-        height: 92%;
+        height: 95%;
         width: 90%;
         margin: auto;
         background: #FFFFFF;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
-
+        overflow: show;
+        position: relative;
 
         h2 {
             text-align: center;
@@ -28,152 +28,188 @@
 
         }
 
-        //contains contents/funtional components
-        .PF_Content {
+        .PF_Page_Container {
             display: flex;
-            flex-direction: column;
-            margin: auto;
-            height: 86%;
-            width: 93%;
-            border-radius: 7px;
-            background: #FFFFFF;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.10), 0 5px 6px rgba(0, 0, 0, 0.05);
-
-            //constains drops down menus
-            .PF_Input {
-                display: flex;
-                flex-direction: column;
-
-                //styling for dropdowns
-                .poloOption_container {
-                    width: 90%;
-                    margin: auto;
-                    height: auto;
-                    margin-bottom: 1%;
-
-                    .poloOptions__control {
-                        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-                        height: 8.5vh;
-                        cursor: pointer;
-                        border: none;
-
-                        .poloOptions__indicators {
-
-                            svg {
-                                transition: 0.2s ease-in;
-                                color: #51C184;
-                                border-radius: 50%;
-                                background: rgba(81, 193, 132, 0.4);
-                                padding: 8px;
-                            }
-
-                            .poloOptions__indicator-separator {
-                                display: none;
-                            }
-                        }
-                    }
-
-                    //hover effects for indicators
-                    .poloOptions__control:hover {
-
-                        .poloOptions__indicators {
-                            svg {
-                                color: white;
-                                transition: 0.2s ease-in;
-                                background: #51C184;
-                            }
-                        }
-                    }
+            height: 100%;
+            width: 100%;
 
 
-                    .poloOptions__option:hover {
-                        color: white;
-                        background-color: rgba(81, 193, 132, 0.8);
-                        cursor: pointer;
-                    }
-                }
+            //page transitions
+            .pageOne {
+                transition: 0.35s ease-in-out;
+                transform: translateX(0%);
             }
 
+            .pageOne.hide {
+                transform: translateX(-125%);
+            }
 
-            //contains ABI and Fact
-            .PF_Info_Container {
-                box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-                width: 90%;
-                border-radius: 5px;
+            .pageTwo {
+                transition: 0.35s ease-in-out;
+                transform: translateX(0%);
+            }
+
+            .pageTwo.hide {
+                transform: translateX(125%);
+            }
+
+            //contains contents/funtional components
+            .PF_Content {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                left: 0;
+                right: 0;
                 margin-left: auto;
                 margin-right: auto;
-                margin-top: auto;
-                margin-bottom: auto;
+                margin-top: 5%;
+                height: 86%;
+                width: 93%;
+                border-radius: 7px;
+                background: #FFFFFF;
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.10), 0 5px 6px rgba(0, 0, 0, 0.05);
 
-                .PF_Info {
+                //constains drops down menus
+                .PF_Input {
                     display: flex;
-                    margin-top: 3%;
+                    flex-direction: column;
 
-                    svg {
-                        height: 20px;
-                        padding: 6px;
-                        border-radius: 50%;
-                        background-color: rgba(81, 193, 132, 0.5);
-                        color: #51C184;
-                        margin-top: auto;
-                        margin-bottom: auto;
-                        margin-left: 3%;
+                    //styling for dropdowns
+                    .poloOption_container {
+                        width: 90%;
+                        margin: auto;
+                        height: auto;
+                        margin-bottom: 1%;
+
+                        .poloOptions__control {
+                            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+                            height: 8.5vh;
+                            cursor: pointer;
+                            border: none;
+
+                            .poloOptions__indicators {
+
+                                svg {
+                                    transition: 0.2s ease-in;
+                                    color: #51C184;
+                                    border-radius: 50%;
+                                    background: rgba(81, 193, 132, 0.4);
+                                    padding: 8px;
+                                }
+
+                                .poloOptions__indicator-separator {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        //hover effects for indicators
+                        .poloOptions__control:hover {
+
+                            .poloOptions__indicators {
+                                svg {
+                                    color: white;
+                                    transition: 0.2s ease-in;
+                                    background: #51C184;
+                                }
+                            }
+                        }
+
+                        .poloOption_menu {
+                            border: none;
+
+                            .poloOptions__option:hover {
+                                color: white;
+                                background-color: rgba(81, 193, 132, 0.8);
+                                cursor: pointer;
+                            }
+                        }
                     }
-
-                    p {
-                        margin-top: auto;
-                        margin-bottom: auto;
-                        margin-left: 4%;
-                        margin-right: 2%;
-                    }
-
-                }
-
-                .ABI {
-                    margin-bottom: 2%;
                 }
 
 
-                .Fact {
-                    margin-bottom: 3%;
-                }
-            }
-
-
-            // Contains buttons
-            .PF_Buttons {
-                display: flex;
-                flex-direction: column;
-                margin-bottom: auto;
-                margin-top: auto;
-
-                p {
-                    cursor: pointer;
-                    text-align: center;
-                    padding: 4%;
+                //contains ABI and Fact
+                .PF_Info_Container {
+                    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+                    width: 90%;
                     border-radius: 5px;
-                    background: #51C184;
-                    color: white;
-                    width: 60%;
-                    margin: 0;
                     margin-left: auto;
                     margin-right: auto;
-                    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-                    transition: 0.15s ease-in;
+                    margin-top: auto;
+                    margin-bottom: auto;
+
+                    .PF_Info {
+                        display: flex;
+                        margin-top: 3%;
+
+                        svg {
+                            height: 20px;
+                            padding: 6px;
+                            border-radius: 50%;
+                            background-color: rgba(81, 193, 132, 0.5);
+                            color: #51C184;
+                            margin-top: auto;
+                            margin-bottom: auto;
+                            margin-left: 3%;
+                        }
+
+                        p {
+                            margin-top: auto;
+                            margin-bottom: auto;
+                            margin-left: 4%;
+                            margin-right: 2%;
+                        }
+
+                    }
+
+                    .ABI {
+                        margin-bottom: 2%;
+                    }
+
+
+                    .Fact {
+                        margin-bottom: 3%;
+                    }
                 }
 
-                .PF_Button_Fact {
-                    margin-bottom: 6%;
+
+                // Contains buttons
+                .PF_Buttons {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: auto;
+                    margin-top: auto;
+
+                    p {
+                        cursor: pointer;
+                        text-align: center;
+                        padding: 4%;
+                        border-radius: 5px;
+                        background: #51C184;
+                        color: white;
+                        width: 60%;
+                        margin: 0;
+                        margin-left: auto;
+                        margin-right: auto;
+                        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+                        transition: 0.15s ease-in;
+                    }
+
+                    .PF_Button_Fact {
+                        margin-bottom: 6%;
+                    }
+
+                    p:active {
+                        transition: 0.15s ease-in;
+                        background: white;
+                        color: #51C184;
+                    }
                 }
 
-                p:active {
-                    transition: 0.15s ease-in;
-                    background: white;
-                    color: #51C184;
-                }
             }
-
         }
+
+
     }
 }
 
@@ -187,79 +223,81 @@
             height: 90%;
             width: 80%;
 
-            .PF_Content {
+            .PF_Page_Container {
+                .PF_Content {
 
-                .PF_Input {
-                    flex-direction: row;
+                    .PF_Input {
+                        flex-direction: row;
 
 
 
-                    .poloOption_container {
-                        width: 45%;
-                        margin-top: 5%;
-                        margin-bottom: 0;
+                        .poloOption_container {
+                            width: 45%;
+                            margin-top: 5%;
+                            margin-bottom: 0;
 
-                        .poloOptions__control {
-                            height: 7vh;
+                            .poloOptions__control {
+                                height: 7vh;
+                            }
+
+                        }
+                    }
+
+                    .PF_Info_Container {
+                        display: flex;
+                        flex-direction: column;
+                        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+                        flex: 1;
+                        margin-top: 10%;
+                        margin-bottom: 18%;
+
+                        .PF_Info {
+                            display: flex;
+                            margin-top: auto;
+                            margin-bottom: auto;
+
+                            svg {
+                                height: 3vh;
+                                width: auto;
+                                padding: 6px;
+                                border-radius: 50%;
+                                background-color: rgba(81, 193, 132, 0.5);
+                                color: #51C184;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                                margin-left: 3%;
+                            }
+
+                            p {
+                                font-size: 1.2rem;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                                margin-left: 4%;
+                                margin-right: 2%;
+                            }
+
                         }
 
                     }
-                }
 
-                .PF_Info_Container {
-                    display: flex;
-                    flex-direction: column;
-                    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-                    flex: 1;
-                    margin-top: 10%;
-                    margin-bottom: 18%;
 
-                    .PF_Info {
-                        display: flex;
-                        margin-top: auto;
-                        margin-bottom: auto;
 
-                        svg {
-                            height: 3vh;
-                            width: auto;
-                            padding: 6px;
-                            border-radius: 50%;
-                            background-color: rgba(81, 193, 132, 0.5);
-                            color: #51C184;
-                            margin-top: auto;
-                            margin-bottom: auto;
-                            margin-left: 3%;
-                        }
+                    .PF_Buttons {
+                        width: 60%;
+                        margin: auto;
+                        margin-bottom: 15%;
 
                         p {
-                            font-size: 1.2rem;
-                            margin-top: auto;
-                            margin-bottom: auto;
-                            margin-left: 4%;
-                            margin-right: 2%;
+                            padding: 6%;
+                        }
+
+                        .PF_Button_Fact {
+                            margin-bottom: 10%;
                         }
 
                     }
 
                 }
-
-
-
-                .PF_Buttons {
-                    width: 60%;
-                    margin: auto;
-                    margin-bottom: 15%;
-
-                    p {
-                        padding: 6%;
-                    }
-
-                    .PF_Button_Fact {
-                        margin-bottom: 10%;
-                    }
-
-                }
-
             }
         }
     }
@@ -272,73 +310,72 @@
 
         .PF_Box {
 
-            .PF_Content {
+            .PF_Page_Container {
 
-
-                .PF_Input {
-
-                    .poloOption_container {}
-                }
-
-                .PF_Info_Container {
-                    flex-direction: column;
+                .PF_Content {
                     margin-top: 3%;
-                    margin-bottom: auto;
 
-                    .PF_Info {
+                    .PF_Info_Container {
+                        flex-direction: column;
+                        margin-top: 0;
+                        margin-bottom: auto;
 
-                        svg {
-                            height: 3vh;
-                            width: auto;
-                            padding: 6px;
-                            border-radius: 50%;
-                            background-color: rgba(81, 193, 132, 0.5);
-                            color: #51C184;
-                            margin-top: auto;
+                        .PF_Info {
+
+                            svg {
+                                height: 3vh;
+                                width: auto;
+                                padding: 6px;
+                                border-radius: 50%;
+                                background-color: rgba(81, 193, 132, 0.5);
+                                color: #51C184;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                                margin-left: 3%;
+                            }
+
+                            p {
+                                font-size: 1.2rem;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                                margin-left: 4%;
+                                margin-right: 2%;
+                            }
+
+
+                        }
+
+                    }
+
+
+                    .PF_Buttons {
+                        flex-direction: row;
+                        width: 60%;
+                        margin: auto;
+                        flex: 1;
+
+                        .PF_Button_Fact {
                             margin-bottom: auto;
-                            margin-left: 3%;
                         }
 
                         p {
-                            font-size: 1.2rem;
                             margin-top: auto;
                             margin-bottom: auto;
-                            margin-left: 4%;
-                            margin-right: 2%;
+                            width: 30%;
+                            transition: 0.3s ease-in;
+                            padding: 4%;
                         }
 
+                        p:hover {
+                            transition: 0.3s ease-in;
+                            background: white;
+                            color: #51C184;
+                        }
+
+
                     }
 
                 }
-
-
-                .PF_Buttons {
-                    flex-direction: row;
-                    width: 60%;
-                    margin: auto;
-                    flex: 1;
-
-                    .PF_Button_Fact {
-                        margin-bottom: auto;
-                    }
-
-                    p {
-                        margin-top: auto;
-                        margin-bottom: auto;
-                        width: 30%;
-                        transition: 0.3s ease-in;
-                        padding: 4%;
-                    }
-
-                    p:hover {
-                        transition: 0.3s ease-in;
-                        background: white;
-                        color: #51C184;
-                    }
-
-
-                }
-
             }
         }
     }
