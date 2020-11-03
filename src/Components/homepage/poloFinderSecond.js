@@ -15,13 +15,15 @@ const PoloFinderSecond = (props) => {
     } else {
       setPagetwo_show("pageTwo hide");
     }
-  },);
+
+
+  }, [props.showTwo]);
 
   //drop down selections
   const [bodyDesc, setBodyDesc] = useState(null);
   const [year, setYear] = useState(null);
   const [miles, setMiles] = useState(null);
-  const [cost, setCost] = useState(null);
+
 
   const bodyDescOptions = [
     { value: "1", label: "1" },
@@ -79,13 +81,7 @@ const PoloFinderSecond = (props) => {
   const ABI_Handler = () => {
     setABI(Data[1].model.abiCode);
     setFact(
-      <script
-        src={
-          "http://numbersapi.com/" +
-          ABI.substring(0, 3) +
-          "/year?write&fragment"
-        }
-      ></script>
+
     );
     console.log(
       fetch("http://numbersapi.com/" + ABI.substring(0, 3) + "/year?write")

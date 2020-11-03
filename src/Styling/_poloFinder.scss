@@ -79,7 +79,7 @@
                         width: 90%;
                         margin: auto;
                         height: auto;
-                        margin-bottom: 1%;
+                        margin-top: 5%;
 
                         .poloOptions__control {
                             box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
@@ -115,7 +115,7 @@
                             }
                         }
 
-                        .poloOption_menu {
+                        .poloOption__menu {
                             border: none;
 
                             .poloOptions__option:hover {
@@ -292,7 +292,7 @@
                         }
 
                         .PF_Button_Fact {
-                            margin-bottom: 10%;
+                            margin-bottom: 5%;
                         }
 
                     }
@@ -313,11 +313,11 @@
             .PF_Page_Container {
 
                 .PF_Content {
-                    margin-top: 3%;
+                    margin-top: 0%;
 
                     .PF_Info_Container {
                         flex-direction: column;
-                        margin-top: 0;
+                        margin-top: 4%;
                         margin-bottom: auto;
 
                         .PF_Info {

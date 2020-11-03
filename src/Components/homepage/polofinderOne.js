@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Data from "./polo-variants";
 import Select from "react-select";
-import DriveEtaIcon from "@material-ui/icons/DriveEta";
-import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 
 const PoloFinderOne = (props) => {
 
@@ -17,52 +15,42 @@ useEffect(() => {
   }else{
     setPageone_show("pageOne hide");
   }
-},);
+}, [props.showOne]);
 
   
 
   //drop down selections
   const [bodyDesc, setBodyDesc] = useState(null);
   const [year, setYear] = useState(null);
-  const [miles, setMiles] = useState(null);
-  const [cost, setCost] = useState(null);
+  const [driveType, setDriveType] = useState(null);
 
   const bodyDescOptions = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
-    { value: "6", label: "6" },
+    { value: "2 DOOR SALOON", label: "2 DOOR SALOON" },
+    { value: "2 DOOR COUPE", label: "2 DOOR COUPE" },
+    { value: "2 DOOR CABRIOLET", label: "2 DOOR CABRIOLET" },
+    { value: "3 DOOR HATCHBACK", label: "3 DOOR HATCHBACK" },
+    { value: "4 DOOR SALOON", label: "4 DOOR SALOON" },
+    { value: "5 DOOR ESTATE", label: "5 DOOR ESTATE" },
+    { value: "5 DOOR HATCHBACK", label: "5 DOOR HATCHBACK" },
   ];
 
   const yearOptions = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
-    { value: "6", label: "6" },
+    { value: "1975", label: "1975" },
+    { value: "1984", label: "1984" },
+    { value: "1990", label: "1990" },
+    { value: "1994", label: "1994" },
+    { value: "2000", label: "2000" },
+    { value: "2002", label: "2002" },
+    { value: "2005", label: "2005" },
+    { value: "2010", label: "2010" },
+    { value: "2014", label: "2014" },
+    { value: "2017", label: "2017" },
   ];
 
-  const milesOptions = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
-    { value: "6", label: "6" },
+  const driveTypeOptions = [
+    { value: "A", label: "Automactic" },
+    { value: "M", label: "Manual" },
   ];
-
-  const costOptions = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
-    { value: "6", label: "6" },
-  ];
-
 
   // active styling for dropdown
   const colourStyles = {
@@ -85,7 +73,7 @@ useEffect(() => {
           onChange={setBodyDesc}
           options={bodyDescOptions}
           styles={colourStyles}
-          placeholder={"Polo seies"}
+          placeholder={"Polo type"}
         />
         <Select
           className={"poloOption_container"}
@@ -94,23 +82,23 @@ useEffect(() => {
           onChange={setYear}
           options={yearOptions}
           styles={colourStyles}
-          placeholder={"Year"}
+          placeholder={"Year From-To"}
         />
       </div>
       <div className="PF_Input">
         <Select
           className={"poloOption_container"}
           classNamePrefix={"poloOptions"}
-          defaultValue={miles}
-          onChange={setMiles}
-          options={milesOptions}
+          defaultValue={driveType}
+          onChange={setDriveType}
+          options={driveTypeOptions}
           styles={colourStyles}
-          placeholder={"Miles"}
+          placeholder={"Drive Type"}
         />
       </div>
 
       <div className="PF_Buttons">
-        <p onClick={props.next_ClickHandler}>Next</p>
+        <p onClick={ props.next_ClickHandler }>Next</p>
       </div>
     </div>
   );
