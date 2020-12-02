@@ -1,0 +1,195 @@
+//container for the page
+.Shopping_Container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    //container for heading and styling
+    .Shopping_Box {
+        height: 95%;
+        width: 90%;
+        margin: auto;
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        overflow: show;
+        position: relative;
+
+        h2 {
+            text-align: center;
+            padding: 0;
+            width: 100%;
+            background-color: rgba(81, 193, 132, 0.8);
+            color: white;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 1.5%;
+            padding-bottom: 1%;
+
+        }
+
+        .Shopping_Page_Container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+
+
+            //page transitions
+            .pageOne {
+                transition: 0.35s ease-in-out;
+                transform: translateX(0%);
+            }
+
+            .pageOne.hide {
+                transform: translateX(-125%);
+            }
+
+            .pageTwo {
+                transition: 0.35s ease-in-out;
+                transform: translateX(0%);
+            }
+
+            .pageTwo.hide {
+                transform: translateX(125%);
+            }
+
+            //contains contents/funtional components
+            .Shopping_Content {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5%;
+                height: 86%;
+                width: 93%;
+                border-radius: 7px;
+                background: #FFFFFF;
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.10), 0 5px 6px rgba(0, 0, 0, 0.05);
+
+
+
+                // Contains buttons
+                .Shopping_Buttons {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: auto;
+                    margin-top: auto;
+
+                    p {
+                        cursor: pointer;
+                        text-align: center;
+                        padding: 4%;
+                        border-radius: 5px;
+                        background: #51C184;
+                        color: white;
+                        width: 60%;
+                        margin: 0;
+                        margin-left: auto;
+                        margin-right: auto;
+                        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+                        transition: 0.15s ease-in;
+                    }
+
+                    .Shopping_Button_Fact {
+                        margin-bottom: 6%;
+                    }
+
+                    p:active {
+                        transition: 0.15s ease-in;
+                        background: white;
+                        color: #51C184;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+}
+
+
+//styling for tablets
+@media only screen and (min-width: 640px) {
+    .Shopping_Container {
+
+
+        .Shopping_Box {
+            height: 90%;
+            width: 80%;
+
+            .Shopping_Page_Container {
+                .Shopping_Content {
+
+
+
+                    .Shopping_Buttons {
+                        width: 60%;
+                        margin: auto;
+                        margin-bottom: 15%;
+
+                        p {
+                            padding: 6%;
+                        }
+
+                        .Shopping_Button_Fact {
+                            margin-bottom: 5%;
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+//styling for desktop
+@media only screen and (min-width: 1025px) {
+    .Shopping_Container {
+
+
+        .Shopping_Box {
+
+            .Shopping_Page_Container {
+
+                .Shopping_Content {
+                    margin-top: 0%;
+
+
+                    .Shopping_Buttons {
+                        flex-direction: row;
+                        width: 60%;
+                        margin: auto;
+                        flex: 1;
+
+                        .Shopping_Button_Fact {
+                            margin-bottom: auto;
+                        }
+
+                        p {
+                            margin-top: auto;
+                            margin-bottom: auto;
+                            width: 30%;
+                            transition: 0.3s ease-in;
+                            padding: 4%;
+                        }
+
+                        p:hover {
+                            transition: 0.3s ease-in;
+                            background: white;
+                            color: #51C184;
+                        }
+
+
+                    }
+
+                }
+            }
+        }
+    }
+
+}
