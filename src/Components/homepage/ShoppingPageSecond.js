@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Data from '../shoppingData/Ingredients';
 
 const ShoppingPageSecond = (props) => {
   //element displays
@@ -22,7 +23,7 @@ const ShoppingPageSecond = (props) => {
     <div className={"Shopping_Content " + pagetwo_show}>
 
       <div className="Shopping_Buttons">
-        <p onClick={props.Reset_Data}>Start Again</p>
+        <p onClick={props.Reset_Data}>Shop Again</p>
       </div>
 
     </div>

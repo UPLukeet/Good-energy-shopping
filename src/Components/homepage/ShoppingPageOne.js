@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Data from '../shoppingData/Ingredients';
 
 const ShoppingPageOne = (props) => {
 
@@ -20,7 +21,7 @@ const ShoppingPageOne = (props) => {
     <div className={"Shopping_Content " + pageone_show}>
 
       <div className="Shopping_Buttons">
-        <p onClick={props.next_ClickHandler}>Next</p>
+        <p onClick={props.next_ClickHandler}>Buy Now!</p>
       </div>
 
     </div>
