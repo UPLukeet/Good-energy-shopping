@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const PoloFinderSecond = (props) => {
+const ShoppingPageSecond = (props) => {
   //element displays
   const [pagetwo_show, setPagetwo_show] = useState("pageTwo hide");
 
@@ -15,17 +15,18 @@ const PoloFinderSecond = (props) => {
 
   }, [props.showTwo]);
 
-  
+
 
 
   return (
-    <div className={"Shopping_Content" + " " + pagetwo_show}>
-      
+    <div className={"Shopping_Content " + pagetwo_show}>
+
       <div className="Shopping_Buttons">
         <p onClick={props.Reset_Data}>Start Again</p>
       </div>
+
     </div>
   );
 };
 
-export default PoloFinderSecond;
+export default ShoppingPageSecond;

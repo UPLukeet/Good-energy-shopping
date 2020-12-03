@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.scss";
-import PoloFinder from "./Components/homepage/polofinder";
+import ShoppingPageContainer from "./Components/homepage/shoppingPageContainer";
 
 function App() {
   return (
     <div className="App">
-      <PoloFinder />
+      <ShoppingPageContainer />
     </div>
   );
 }
