@@ -8,9 +8,7 @@ const ShoppingPageOne = (props) => {
   const [pageone_show, setPageone_show] = useState("pageOne");
 
   //stores quantities of items as JSON objects
-  //const [Quantities, setQuantities] = useState({});
-
-  const quantities = useContext(quantitiesContext);
+  const [Quantities, setQuantities] = useContext(quantitiesContext);
 
   useEffect(() => {
     //sets info text using Json
@@ -29,13 +27,13 @@ const ShoppingPageOne = (props) => {
         //updates Quanties Hook
         const handleChange = (event) => {
 
-          // setQuantities({
-          //   ...Quantities,
-          //   [Ingredients.Name]: {
-          //     ...(Quantities[Ingredients.Name] ?? {}),
-          //     quantities: event.target.value
-          //   }
-          // });
+          setQuantities({
+            ...Quantities,
+            [Ingredients.Name]: {
+              ...(Quantities[Ingredients.Name] ?? {}),
+              quantities: event.target.value
+            }
+          });
         };
 
         return (<div className="Shopping_input" key={Ingredients.Name}>

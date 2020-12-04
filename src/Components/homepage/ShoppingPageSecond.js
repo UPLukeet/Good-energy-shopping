@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Data from '../shoppingData/Ingredients';
+import { quantitiesContext } from '../shoppingData/Quantities';
 
 const ShoppingPageSecond = (props) => {
   //element displays
   const [pagetwo_show, setPagetwo_show] = useState("pageTwo hide");
+
+  // imports quanities of ingredients from context api
+  const quantities = useContext(quantitiesContext);
 
   useEffect(() => {
     //resets info text
