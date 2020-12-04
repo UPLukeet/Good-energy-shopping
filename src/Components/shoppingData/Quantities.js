@@ -1,3 +1,5 @@
+//stored and updates ingredients quantities
+
 import React, {useState, createContext} from 'react';
 
 export const quantitiesContext = createContext();

@@ -38,7 +38,7 @@ const ShoppingPageOne = (props) => {
 
         return (<div className="Shopping_input" key={Ingredients.Name}>
           <p>{Ingredients.Name} £{Ingredients.Price}</p>
-          <input onChange={handleChange.bind(this)} min="0" type="number"></input>
+          <input onChange={handleChange.bind(this)} min="0"  placeholder="0" type="number"></input>
         </div>)
       })}
       <div className="Shopping_Buttons">
