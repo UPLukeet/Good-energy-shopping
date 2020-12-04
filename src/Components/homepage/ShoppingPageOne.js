@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Data from '../shoppingData/Ingredients';
-import Quantities from "../shoppingData/Quantities";
+import { quantitiesContext } from '../shoppingData/Quantities';
 
 const ShoppingPageOne = (props) => {
 
   //element displays
   const [pageone_show, setPageone_show] = useState("pageOne");
 
-  const [Quantities, setQuantities] = useState({});
+  //stores quantities of items as JSON objects
+  //const [Quantities, setQuantities] = useState({});
 
+  const quantities = useContext(quantitiesContext);
 
   useEffect(() => {
     //sets info text using Json
@@ -24,16 +26,17 @@ const ShoppingPageOne = (props) => {
     <div className={"Shopping_Content " + pageone_show}>
       {Data.map((Ingredients) => {
 
+        //updates Quanties Hook
         const handleChange = (event) => {
 
-          setQuantities({
-            ...Quantities,
-            [Ingredients.Name]: {
-                ...(Quantities[Ingredients.Name] ?? {}),
-                quantities: event.target.value
-            }
-        });
-      };
+          // setQuantities({
+          //   ...Quantities,
+          //   [Ingredients.Name]: {
+          //     ...(Quantities[Ingredients.Name] ?? {}),
+          //     quantities: event.target.value
+          //   }
+          // });
+        };
 
         return (<div className="Shopping_input" key={Ingredients.Name}>
           <p>{Ingredients.Name} £{Ingredients.Price}</p>

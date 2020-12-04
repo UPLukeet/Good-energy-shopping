@@ -1,12 +1,16 @@
 import React from "react";
 import "./App.scss";
 import ShoppingPageContainer from "./Components/homepage/shoppingPageContainer";
+import { QuantitiesProvider } from "./Components/shoppingData/Quantities";
 
 function App() {
   return (
-    <div className="App">
-      <ShoppingPageContainer />
-    </div>
+    <QuantitiesProvider>
+      <div className="App">
+        <ShoppingPageContainer />
+      </div>
+    </QuantitiesProvider>
+
   );
 }
 
