@@ -1,34 +1,28 @@
 //Json data for the shopping ingredients
 
-export default {
-    bread: {
-        Ingredient: 'Bread',
-        Price: 1.10,
-        Quantity: 0,
+export default [
+    {
+        Name: 'Bread',
+        Price: "1.10",
     },
 
-    milk: {
-        Ingredient: 'Milk',
-        Price: .50,
-        Quantity: 0,
+    {
+        Name: 'Milk',
+        Price: "0.50",
     },
 
-    cheese: {
-        Ingredient: 'Cheese',
-        Price: .90,
-        Quantity: 0,
+    {
+        Name: 'Cheese',
+        Price: "0.90",
     },
 
-    soup: {
-        Ingredient: 'Soup',
-        Price: .60,
-        Quantity: 0,
+    {
+        Name: 'Soup',
+        Price: "0.60",
     },
 
-    butter: {
-        Ingredient: 'Butter',
-        Price: 1.20,
-        Quantity: 0,
-    },
-
-}
+    {
+        Name: 'Butter',
+        Price: "1.20",
+    }
+]
