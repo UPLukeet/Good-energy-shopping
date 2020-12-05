@@ -22,7 +22,25 @@ const ShoppingPageSecond = (props) => {
   let cheeseTotal = parseFloat(Cheese * Data[2].Price).toFixed(2);
   let soupTotal = parseFloat(Soup * Data[3].Price).toFixed(2);
   let butterTotal = parseFloat(Butter * Data[4].Price).toFixed(2);
-  let total = parseFloat((breadTotal*1) + (milkTotal*1) + (cheeseTotal*1) + (soupTotal*1) + (butterTotal*1)).toFixed(2);
+
+  //discounts and savings
+
+  //butter discount
+  let [butterDiscount, setButterDiscount] = useState(0);
+
+
+  //Main totals
+  let discountTotal = parseFloat(butterDiscount).toFixed(2)
+  let total = parseFloat(((breadTotal * 1) + (milkTotal * 1) + (cheeseTotal * 1) + (soupTotal * 1) + (butterTotal * 1)) - (discountTotal)).toFixed(2);
+
+
+  useEffect(() => {
+    if (Butter > 0) {
+      setButterDiscount(parseFloat(butterTotal / 3).toFixed(2));
+    }
+
+  }, [quantities])
+
 
   useEffect(() => {
     //resets info text
@@ -56,17 +74,19 @@ const ShoppingPageSecond = (props) => {
       </div>}
       {Butter > 0 && <div className="Shopping_output">
         <p>Butter: {Butter} x £{Data[4].Price}</p>
-        <p>Item-Total: £{butterTotal}</p>
+        <p>Item-Discount: -£{butterDiscount}</p>
+        <p>Item-Total: £{parseFloat(butterTotal - butterDiscount).toFixed(2)}</p>
       </div>}
       {total > 0 && <div className="Shopping_output">
+        <p>Discount-Total: -£{discountTotal}</p>
         <p>Total: £{total}</p>
-        </div>}
+      </div>}
 
-        <div className="Shopping_Buttons">
-          <p onClick={props.Reset_Data}>Shop Again</p>
-        </div>
-
+      <div className="Shopping_Buttons">
+        <p onClick={props.Reset_Data}>Shop Again</p>
       </div>
+
+    </div>
   );
 };
 
