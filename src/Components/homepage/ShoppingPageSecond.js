@@ -24,19 +24,25 @@ const ShoppingPageSecond = (props) => {
   let butterTotal = parseFloat(Butter * Data[4].Price).toFixed(2);
 
   //discounts and savings
-
-  //butter discount
   let [butterDiscount, setButterDiscount] = useState(0);
+  let [cheeseDicscount, setCheeseDiscount] = useState(0);
 
 
   //Main totals
-  let discountTotal = parseFloat(butterDiscount).toFixed(2)
+  let discountTotal = parseFloat((butterDiscount*1) + (cheeseDicscount*1)).toFixed(2)
   let total = parseFloat(((breadTotal * 1) + (milkTotal * 1) + (cheeseTotal * 1) + (soupTotal * 1) + (butterTotal * 1)) - (discountTotal)).toFixed(2);
 
 
   useEffect(() => {
+
+    //butter discount
     if (Butter > 0) {
       setButterDiscount(parseFloat(butterTotal / 3).toFixed(2));
+    }
+
+    //cheese discount
+    if (Cheese > 1) {
+      setCheeseDiscount(parseFloat(Math.floor(Cheese / 2) * Data[2].Price).toFixed(2))
     }
 
   }, [quantities])
@@ -66,7 +72,8 @@ const ShoppingPageSecond = (props) => {
       </div>}
       {Cheese > 0 && <div className="Shopping_output">
         <p>Cheese: {Cheese} x £{Data[2].Price}</p>
-        <p>Item-Total: £{cheeseTotal}</p>
+        {Cheese > 1 && <p>Item-Discount: -£{cheeseDicscount}</p>}
+        <p>Item-Total: £{parseFloat(cheeseTotal - cheeseDicscount).toFixed(2)}</p>
       </div>}
       {Soup > 0 && <div className="Shopping_output">
         <p>Soup: {Soup} x £{Data[3].Price}</p>
