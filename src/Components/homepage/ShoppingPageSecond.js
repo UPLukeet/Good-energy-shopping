@@ -26,10 +26,11 @@ const ShoppingPageSecond = (props) => {
   //discounts and savings
   let [butterDiscount, setButterDiscount] = useState(0);
   let [cheeseDicscount, setCheeseDiscount] = useState(0);
+  let [breadDiscount, setBreadDiscount] = useState(0);
 
 
   //Main totals
-  let discountTotal = parseFloat((butterDiscount*1) + (cheeseDicscount*1)).toFixed(2)
+  let discountTotal = parseFloat((butterDiscount * 1) + (cheeseDicscount * 1) + (breadDiscount * 1)).toFixed(2)
   let total = parseFloat(((breadTotal * 1) + (milkTotal * 1) + (cheeseTotal * 1) + (soupTotal * 1) + (butterTotal * 1)) - (discountTotal)).toFixed(2);
 
 
@@ -38,11 +39,32 @@ const ShoppingPageSecond = (props) => {
     //butter discount
     if (Butter > 0) {
       setButterDiscount(parseFloat(butterTotal / 3).toFixed(2));
+    } else {
+      setButterDiscount(0);
     }
 
     //cheese discount
     if (Cheese > 1) {
       setCheeseDiscount(parseFloat(Math.floor(Cheese / 2) * Data[2].Price).toFixed(2))
+    } else {
+      setCheeseDiscount(0);
+    }
+
+    //bread discount
+    if (Soup > 0) {
+
+      //checks the difference between Soup quanitities and Bread
+      let diff = Bread - Soup;
+
+      //Bread quantitie same as Soup or less
+      if (diff <= 0) {
+        setBreadDiscount(breadTotal / 2);
+      }else{
+        setBreadDiscount(parseFloat((Bread - diff) * (Data[0].Price / 2)).toFixed(2));
+      }
+
+    } else {
+      setBreadDiscount(0)
     }
 
   }, [quantities])
@@ -64,6 +86,7 @@ const ShoppingPageSecond = (props) => {
 
       {Bread > 0 && <div className="Shopping_output">
         <p>Bread: {Bread} x £{Data[0].Price}</p>
+        {Soup > 0 && <p>Item-Discount: -£{breadDiscount}</p>}
         <p>Item-Total: £{breadTotal}</p>
       </div>}
       {Milk > 0 && <div className="Shopping_output">
@@ -85,7 +108,7 @@ const ShoppingPageSecond = (props) => {
         <p>Item-Total: £{parseFloat(butterTotal - butterDiscount).toFixed(2)}</p>
       </div>}
       {total > 0 && <div className="Shopping_output">
-        <p>Discount-Total: -£{discountTotal}</p>
+        {discountTotal > 0 && <p>Discount-Total: -£{discountTotal}</p>}
         <p>Total: £{total}</p>
       </div>}
 
