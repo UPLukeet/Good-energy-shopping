@@ -17,12 +17,12 @@ const ShoppingPageSecond = (props) => {
   const Butter = quantities[0].Butter.quantities;
 
   //sets totals
-  const [breadTotal, setBreadTotal] = useState(0);
-  const [milkTotal, setMilkTotal] = useState(0);
-  const [cheeseTotal, setCheeseTotal] = useState(0);
-  const [soupTotal, setSoupTotal] = useState(0);
-  const [butterTotal, setButterTotal] = useState(0);
-  const [total, setTotal] = useState(0);
+  let breadTotal = parseFloat(Bread * Data[0].Price).toFixed(2);
+  let milkTotal = parseFloat(Milk * Data[1].Price).toFixed(2);
+  let cheeseTotal = parseFloat(Cheese * Data[2].Price).toFixed(2);
+  let soupTotal = parseFloat(Soup * Data[3].Price).toFixed(2);
+  let butterTotal = parseFloat(Butter * Data[4].Price).toFixed(2);
+  let total = parseFloat((breadTotal*1) + (milkTotal*1) + (cheeseTotal*1) + (soupTotal*1) + (butterTotal*1)).toFixed(2);
 
   useEffect(() => {
     //resets info text
@@ -32,17 +32,6 @@ const ShoppingPageSecond = (props) => {
       setPagetwo_show("pageTwo hide");
     }
   }, [props.showTwo]);
-
-  useEffect(() => {
-    setBreadTotal(parseFloat(Bread * Data[0].Price).toFixed(2))
-    setMilkTotal(parseFloat(Milk * Data[1].Price).toFixed(2))
-    setCheeseTotal(parseFloat(Cheese * Data[2].Price).toFixed(2))
-    setSoupTotal(parseFloat(Soup * Data[3].Price).toFixed(2))
-    setButterTotal(parseFloat(Butter * Data[4].Price).toFixed(2))
-    setTotal(parseFloat(breadTotal + milkTotal + cheeseTotal + soupTotal + butterTotal).toFixed(2))
-
-  }, [quantities]);
-
 
 
   return (
