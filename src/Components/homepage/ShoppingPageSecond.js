@@ -30,8 +30,8 @@ const ShoppingPageSecond = (props) => {
 
 
   //Main totals
-  let discountTotal = parseFloat((butterDiscount * 1) + (cheeseDicscount * 1) + (breadDiscount * 1)).toFixed(2)
-  let total = parseFloat(((breadTotal * 1) + (milkTotal * 1) + (cheeseTotal * 1) + (soupTotal * 1) + (butterTotal * 1)) - (discountTotal)).toFixed(2);
+  let discountTotal = parseFloat((butterDiscount * 1) + (cheeseDicscount * 1) + (breadDiscount * 1)).toFixed(2);
+  let total = parseFloat((breadTotal * 1) + (milkTotal * 1) + (cheeseTotal * 1) + (soupTotal * 1) + (butterTotal * 1)).toFixed(2);
 
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const ShoppingPageSecond = (props) => {
 
       //Bread quantitie same as Soup or less
       if (diff <= 0) {
-        setBreadDiscount(breadTotal / 2);
+        setBreadDiscount(parseFloat(breadTotal / 2).toFixed(2));
       }else{
         setBreadDiscount(parseFloat((Bread - diff) * (Data[0].Price / 2)).toFixed(2));
       }
@@ -85,9 +85,9 @@ const ShoppingPageSecond = (props) => {
 
 
       {Bread > 0 && <div className="Shopping_output">
-        <p>Bread: {Bread} x £{Data[0].Price}</p>
+  <p>Bread: {Bread} x £{Data[0].Price}</p>
         {Soup > 0 && <p>Item-Discount: -£{breadDiscount}</p>}
-        <p>Item-Total: £{breadTotal}</p>
+        <p>Item-Total: £{parseFloat(breadTotal - breadDiscount).toFixed(2)}</p>
       </div>}
       {Milk > 0 && <div className="Shopping_output">
         <p>Milk: {Milk} x £{Data[1].Price}</p>
@@ -108,8 +108,10 @@ const ShoppingPageSecond = (props) => {
         <p>Item-Total: £{parseFloat(butterTotal - butterDiscount).toFixed(2)}</p>
       </div>}
       {total > 0 && <div className="Shopping_output">
-        {discountTotal > 0 && <p>Discount-Total: -£{discountTotal}</p>}
-        <p>Total: £{total}</p>
+        {discountTotal == 0 && <p>Total: £{total}</p>}
+        {discountTotal > 0 && <p>Discount: -£{discountTotal}</p>}
+        {discountTotal > 0 && <p>Subtotal: £{total}</p>}
+        {discountTotal > 0 && <p>Total: £{parseFloat(total - discountTotal).toFixed(2)}</p>}
       </div>}
 
       <div className="Shopping_Buttons">
