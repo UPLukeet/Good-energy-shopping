@@ -68,25 +68,29 @@
                 background: #ffffff;
                 box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1), 0 5px 6px rgba(0, 0, 0, 0.05);
 
-                //containts input fields
-                .Shopping_input_container {
+                .Shopping_input_aligner {
                     display: flex;
                     flex-direction: column;
-                    height: auto;
-                    margin: auto;
-                    .Shopping_input {
-                        margin-top: auto;
-                        margin-bottom: auto;
-                        p {
-                            margin: 0;
+                    //containts input fields
+                    .Shopping_input_container {
+                        display: flex;
+                        flex-direction: column;
+                        height: auto;
+                        margin: auto;
+                        .Shopping_input {
+                            margin-top: auto;
+                            margin-bottom: auto;
+                            p {
+                                margin: 0;
+                            }
                         }
                     }
-                }
 
-                //constains discount list
-                .Discount_list {
-                    margin: auto;
-                    h3 {
+                    //constains discount list
+                    .Discount_list {
+                        margin: auto;
+                        h3 {
+                        }
                     }
                 }
 
@@ -132,7 +136,6 @@
                         margin-left: auto;
                     }
                 }
-
 
                 // Contains buttons
                 .Shopping_Buttons {
@@ -180,6 +183,33 @@
 
             .Shopping_Page_Container {
                 .Shopping_Content {
+
+                    .Shopping_input_aligner {
+                        display: flex;
+                        flex-direction: row;
+                        //containts input fields
+                        .Shopping_input_container {
+                            display: flex;
+                            flex-direction: column;
+                            height: auto;
+                            margin: auto;
+                            .Shopping_input {
+                                margin-top: auto;
+                                margin-bottom: auto;
+                                p {
+                                    margin: 0;
+                                }
+                            }
+                        }
+    
+                        //constains discount list
+                        .Discount_list {
+                            margin: auto;
+                            h3 {
+                            }
+                        }
+                    }
+
                     .Shopping_Buttons {
                         width: 60%;
                         margin: auto;
