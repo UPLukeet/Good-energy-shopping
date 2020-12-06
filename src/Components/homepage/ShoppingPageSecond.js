@@ -56,10 +56,9 @@ const ShoppingPageSecond = (props) => {
       //checks the difference between Soup quanitities and Bread
       let diff = Bread - Soup;
 
-      //Bread quantitie same as Soup or less
       if (diff <= 0) {
         setBreadDiscount(parseFloat(breadTotal / 2).toFixed(2));
-      }else{
+      } else {
         setBreadDiscount(parseFloat((Bread - diff) * (Data[0].Price / 2)).toFixed(2));
       }
 
@@ -85,29 +84,39 @@ const ShoppingPageSecond = (props) => {
 
 
       {Bread > 0 && <div className="Shopping_output">
-  <p>Bread: {Bread} x £{Data[0].Price}</p>
-        {Soup > 0 && <p>Item-Discount: -£{breadDiscount}</p>}
-        <p>Item-Total: £{parseFloat(breadTotal - breadDiscount).toFixed(2)}</p>
+        <p>Bread:<br />{Bread}x £{Data[0].Price}</p>
+        <div className='Shopping_item_total'>
+          {Soup > 0 && <p className='Item_discount'>Discount: -£{breadDiscount}</p>}
+          <p>Item-Total: £{parseFloat(breadTotal - breadDiscount).toFixed(2)}</p>
+        </div>
       </div>}
       {Milk > 0 && <div className="Shopping_output">
-        <p>Milk: {Milk} x £{Data[1].Price}</p>
-        <p>Item-Total:£{milkTotal}</p>
+        <p>Milk:<br />{Milk}x £{Data[1].Price}</p>
+        <div className='Shopping_item_total'>
+          <p>Item-Total:£{milkTotal}</p>
+        </div>
       </div>}
       {Cheese > 0 && <div className="Shopping_output">
-        <p>Cheese: {Cheese} x £{Data[2].Price}</p>
-        {Cheese > 1 && <p>Item-Discount: -£{cheeseDicscount}</p>}
-        <p>Item-Total: £{parseFloat(cheeseTotal - cheeseDicscount).toFixed(2)}</p>
+        <p>Cheese:<br />{Cheese}x £{Data[2].Price}</p>
+        <div className='Shopping_item_total'>
+          {Cheese > 1 && <p className='Item_discount'>Discount: -£{cheeseDicscount}</p>}
+          <p>Item-Total: £{parseFloat(cheeseTotal - cheeseDicscount).toFixed(2)}</p>
+        </div>
       </div>}
       {Soup > 0 && <div className="Shopping_output">
-        <p>Soup: {Soup} x £{Data[3].Price}</p>
-        <p>Item-Total: £{soupTotal}</p>
+        <p>Soup:<br />{Soup}x £{Data[3].Price}</p>
+        <div className='Shopping_item_total'>
+          <p>Item-Total: £{soupTotal}</p>
+        </div>
       </div>}
       {Butter > 0 && <div className="Shopping_output">
-        <p>Butter: {Butter} x £{Data[4].Price}</p>
-        <p>Item-Discount: -£{butterDiscount}</p>
-        <p>Item-Total: £{parseFloat(butterTotal - butterDiscount).toFixed(2)}</p>
+        <p>Butter:<br />{Butter}x £{Data[4].Price}</p>
+        <div className='Shopping_item_total'>
+          <p className='Item_discount'>Discount: -£{butterDiscount}</p>
+          <p>Item-Total: £{parseFloat(butterTotal - butterDiscount).toFixed(2)}</p>
+        </div>
       </div>}
-      {total > 0 && <div className="Shopping_output">
+      {total > 0 && <div className="Shopping_total">
         {discountTotal == 0 && <p>Total: £{total}</p>}
         {discountTotal > 0 && <p>Discount: -£{discountTotal}</p>}
         {discountTotal > 0 && <p>Subtotal: £{total}</p>}
