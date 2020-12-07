@@ -6,6 +6,7 @@ export const quantitiesContext = createContext();
 
 export const QuantitiesProvider = (props) => {
 
+    //stores quanitities of items globally
     const [Quantities, setQuantities] = useState({
         Bread: {quantities: "0"},
         Milk: {quantities: "0"},

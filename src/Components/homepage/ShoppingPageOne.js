@@ -9,9 +9,9 @@ const ShoppingPageOne = (props) => {
 
   //stores quantities of items as JSON objects
   const [Quantities, setQuantities] = useContext(quantitiesContext);
-
   const quantities = useContext(quantitiesContext);
 
+  //each items quantities
   const Bread = quantities[0].Bread.quantities;
   const Milk = quantities[0].Milk.quantities;
   const Cheese = quantities[0].Cheese.quantities;
