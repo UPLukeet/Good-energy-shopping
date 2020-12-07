@@ -52,7 +52,6 @@
             }
 
             //contains contents/funtional components
-
             .Shopping_Content {
                 display: flex;
                 flex-direction: column;
@@ -205,6 +204,7 @@
                 .Shopping_Content {
                     margin-top: 1%;
 
+                    //contains input fields
                     .Shopping_input_aligner {
                         flex-direction: row-reverse;
                         margin: auto;
