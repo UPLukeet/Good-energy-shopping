@@ -6,9 +6,18 @@ const ShoppingPageOne = (props) => {
 
   //element displays
   const [pageone_show, setPageone_show] = useState("pageOne");
+  const [IngredientsSelected, setIngredientSelected] = useState(false);
 
   //stores quantities of items as JSON objects
   const [Quantities, setQuantities] = useContext(quantitiesContext);
+
+  const quantities = useContext(quantitiesContext);
+
+  const Bread = quantities[0].Bread.quantities;
+  const Milk = quantities[0].Milk.quantities;
+  const Cheese = quantities[0].Cheese.quantities;
+  const Soup = quantities[0].Soup.quantities;
+  const Butter = quantities[0].Butter.quantities;
 
   useEffect(() => {
     //sets info text using Json
@@ -18,6 +27,14 @@ const ShoppingPageOne = (props) => {
       setPageone_show("pageOne hide");
     }
   }, [props.showOne]);
+
+  useEffect(() => {
+    if (Butter + Milk + Bread + Soup + Cheese > 0) {
+      setIngredientSelected(true)
+    } else {
+      setIngredientSelected(false)
+    }
+  }, [Butter, Milk, Bread, Soup, Cheese]);
 
 
   return (
@@ -55,7 +72,10 @@ const ShoppingPageOne = (props) => {
         </div>
       </div>
       <div className="Shopping_Buttons">
-        <p onClick={props.next_ClickHandler}>Buy Now!</p>
+        {IngredientsSelected ?
+          <p onClick={props.next_ClickHandler}>Buy Now!</p> :
+          <p onClick={() => alert('Please Input some food!')}>Buy Now!</p>
+        }
       </div>
 
     </div>
