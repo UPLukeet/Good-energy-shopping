@@ -19,7 +19,7 @@
             text-align: center;
             padding: 0;
             width: 100%;
-            background-color: #51c184;
+            background-color: #202833;
             color: white;
             margin-top: 0;
             margin-bottom: 0;
@@ -68,10 +68,12 @@
                 background: #ffffff;
                 box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1), 0 5px 6px rgba(0, 0, 0, 0.05);
 
+                //containts input fields
                 .Shopping_input_aligner {
                     display: flex;
                     flex-direction: column;
-                    //containts input fields
+                    height: auto;
+
                     .Shopping_input_container {
                         display: flex;
                         flex-direction: column;
@@ -94,7 +96,7 @@
                     }
                 }
 
-                //contains input output field
+                //contains output field
                 .Shopping_output {
                     display: flex;
                     margin: auto;
@@ -159,10 +161,6 @@
                         transition: 0.15s ease-in;
                     }
 
-                    .Shopping_Button_Fact {
-                        margin-bottom: 6%;
-                    }
-
                     p:active {
                         transition: 0.15s ease-in;
                         background: white;
@@ -176,57 +174,6 @@
 
 //styling for tablets
 @media only screen and (min-width: 640px) {
-    .Shopping_Container {
-        .Shopping_Box {
-            height: 90%;
-            width: 80%;
-
-            .Shopping_Page_Container {
-                .Shopping_Content {
-
-                    .Shopping_input_aligner {
-                        display: flex;
-                        flex-direction: row;
-                        //containts input fields
-                        .Shopping_input_container {
-                            display: flex;
-                            flex-direction: column;
-                            height: auto;
-                            margin: auto;
-                            .Shopping_input {
-                                margin-top: auto;
-                                margin-bottom: auto;
-                                p {
-                                    margin: 0;
-                                }
-                            }
-                        }
-    
-                        //constains discount list
-                        .Discount_list {
-                            margin: auto;
-                            h3 {
-                            }
-                        }
-                    }
-
-                    .Shopping_Buttons {
-                        width: 60%;
-                        margin: auto;
-                        margin-bottom: 15%;
-
-                        p {
-                            padding: 6%;
-                        }
-
-                        .Shopping_Button_Fact {
-                            margin-bottom: 5%;
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
 
 //styling for desktop
@@ -235,32 +182,43 @@
         .Shopping_Box {
             .Shopping_Page_Container {
                 .Shopping_Content {
-                    margin-top: 0%;
+                    margin-top: 1%;
 
-                    .Shopping_Buttons {
-                        flex-direction: row;
-                        width: 60%;
+                    .Shopping_input_aligner {
+                        flex-direction: row-reverse;
                         margin: auto;
-                        flex: 1;
+                        width: 60%;
 
-                        .Shopping_Button_Fact {
-                            margin-bottom: auto;
-                        }
-
-                        p {
-                            margin-top: auto;
-                            margin-bottom: auto;
-                            width: 30%;
-                            transition: 0.3s ease-in;
-                            padding: 4%;
-                        }
-
-                        p:hover {
-                            transition: 0.3s ease-in;
-                            background: white;
-                            color: #51c184;
+                        .Discount_list {
+                            margin: auto;
+                            margin-top: 0;
+                            h3 {
+                            }
                         }
                     }
+                    
+
+
+
+                //contains output field
+                .Shopping_output {
+                    width: 35%;
+                }
+
+                        // Contains buttons
+                .Shopping_Buttons {
+
+                    p {
+                        padding: 2%;
+                        width: 20%;
+                    }
+
+                    p:hover {
+                        transition: 0.15s ease-in;
+                        background: white;
+                        color: #51c184;
+                    }
+                }
                 }
             }
         }

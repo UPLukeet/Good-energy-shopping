@@ -8,6 +8,7 @@ function App() {
     <QuantitiesProvider>
       <div className="App">
         <ShoppingPageContainer />
+        <div className='Shopping_background'/>
       </div>
     </QuantitiesProvider>
 
